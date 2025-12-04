@@ -312,8 +312,8 @@ export default function App() {
       {/* FOOTER */}
       <footer className="border-t border-[#333] pt-8 text-center text-gray-600 text-sm">
         <p>
-          Yeasin_Arfat_Portfolio_v2.0 <br />
-          Built with Next.js, Tailwind & pure &lt;love /&gt; for code.
+          Yeasin_Arfat_Portfolio_v1.0 <br />
+          Built with React.js, Tailwind & pure &lt;love /&gt; for code.
         </p>
       </footer>
     </div>
