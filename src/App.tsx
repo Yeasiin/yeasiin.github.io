@@ -272,13 +272,38 @@ export default function App() {
               <p className="text-gray-400 mb-6">{project.desc}</p>
 
               <div className="flex gap-4">
+                {project.links.map((linkObj, linkIdx) => {
+                  const linkName = Object.keys(linkObj)[0];
+                  const linkUrl = linkObj[linkName];
+                  return (
+                    <a
+                      key={linkIdx}
+                      href={linkUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {linkName === "GitHub" ? (
+                        <button className="text-sm border border-gray-600 hover:border-[#00ff41] hover:text-[#00ff41] px-4 py-2 uppercase transition-all flex items-center gap-2">
+                          View_Code <Github size={12} />
+                        </button>
+                      ) : (
+                        <button className="text-sm bg-[#222] hover:bg-[#00ff41] hover:text-black px-4 py-2 uppercase transition-all flex items-center gap-2">
+                          {linkName.replace(" ", "_")}{" "}
+                          <ExternalLink size={12} />
+                        </button>
+                      )}
+                    </a>
+                  );
+                })}
+              </div>
+              {/* <div className="flex gap-4">
                 <button className="text-sm border border-gray-600 hover:border-[#00ff41] hover:text-[#00ff41] px-4 py-2 uppercase transition-all">
                   View_Code
                 </button>
                 <button className="text-sm bg-[#222] hover:bg-[#00ff41] hover:text-black px-4 py-2 uppercase transition-all flex items-center gap-2">
                   Live_Demo <ExternalLink size={12} />
                 </button>
-              </div>
+              </div> */}
             </div>
           ))}
         </div>
