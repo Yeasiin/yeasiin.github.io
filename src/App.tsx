@@ -274,7 +274,7 @@ export default function App() {
               <div className="flex gap-4">
                 {project.links.map((linkObj, linkIdx) => {
                   const linkName = Object.keys(linkObj)[0];
-                  const linkUrl = linkObj[linkName];
+                  const linkUrl = linkObj[linkName as keyof typeof linkObj];
                   return (
                     <a
                       key={linkIdx}
